@@ -1,0 +1,13 @@
+/* CSS Document - French */
+.brandbar .icons > .icon-wrapper .icon-slideout .icon-slideout-inner .search-form .search-text, #nav-mobile .navbar-menu .search-box .search-form .search-text {width: 167px;}
+
+/* Blair temporarily added for launch */
+ul#nav {padding:0 0 0 6px;}
+ul#nav a, ul#nav a.unhover {padding:0 11px 0 12px;}
+ul#nav a:hover, #nav a.gmhover {background-image:none;}
+.ab .navbar .navbar-nav .cbp-hrmenu > ul > li > a {padding:10px 5px 11px !important;}
+.cbp-hrmenu .cbp-hrsub-inner .row li.spacer {height:75px !important;}
+.task-bar a {font-size:11px;}
+.product-directory ul {font-size:15px;}
+.updates {padding-top:35px;}
+.breadcrumb .share-list > li > .dropdown-menu > li > a {width:80px; padding:3px; text-align:left;}

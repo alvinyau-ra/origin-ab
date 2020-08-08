@@ -1,0 +1,240 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    
+<!-- Mirrored from origin-ab.rockwellautomation.com/lang-selection.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Aug 2020 00:23:58 GMT -->
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Language Selection | Allen-Bradley</title>
+      <meta name="description" content="">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+      <link rel="apple-touch-icon" sizes="180x180" href="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/apple-touch-icon.png?v=2">
+      <link rel="icon" type="image/png" href="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/favicon-32x32.png?v=2" sizes="32x32">
+      <link rel="icon" type="image/png" href="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/favicon-194x194.png?v=2" sizes="194x194">
+      <link rel="icon" type="image/png" href="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/android-chrome-192x192.png?v=2" sizes="192x192">
+      <link rel="icon" type="image/png" href="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/favicon-16x16.png?v=2" sizes="16x16">
+      <link rel="manifest" href="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/manifest.json?v=2">
+      <link rel="mask-icon" href="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/safari-pinned-tab.svg?v=2" color="#003e7e">
+      <link rel="shortcut icon" href="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/favicon.ico?v=2">
+      <meta name="apple-mobile-web-app-title" content="Allen-Bradley">
+      <meta name="application-name" content="Allen-Bradley">
+      <meta name="msapplication-TileColor" content="#003e7e">
+      <meta name="msapplication-TileImage" content="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/mstile-144x144.png?v=2">
+      <meta name="msapplication-config" content="https://origin-ab.rockwellautomation.com/resources/images/allenbradley/icons/browserconfig.xml?v=2">
+      <meta name="theme-color" content="#ffffff">
+
+      <link rel="stylesheet" href="resources/css/rockwellautomation/vendor/bootstrap.css">
+      <link rel="stylesheet" href="https://origin-ab.rockwellautomation.com/resources/css/rockwellautomation/main.css">
+      <script type="text/javascript" src="resources/scripts/rockwellautomation/vendor/jquery-1.11.2.js"></script>
+      <script src="resources/scripts/rockwellautomation/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	  <script type="text/javascript" src="resources/scripts/rockwellautomation/banner.js"></script>
+      <!--script src="//cdn.getsmartcontent.com/VV4NQVD7.js"></script-->
+
+      <script type="text/javascript">
+      $(document).ready(function(){
+        //determine preferred language
+        $.ajax({
+          type: "HEAD",
+          url: window.location.href,
+          success: function(data, status, xhr) {
+            console.log("ALL HEADERS= "+ xhr.getAllResponseHeaders());
+            console.log("CUST HDR= ["+ xhr.getResponseHeader('country-header') +"], NAV LANG=["+ navigator.language +"]");
+          }
+        });
+        var myCtryPref= Get_Cookie('myRokCtry');
+        if ( myCtryPref==null ) myCtryPref= navigator.language.replace(/^.+-(.+)$/,'$1'); //TO DO: change to Akamai request header value when available
+        switch ( myCtryPref.toUpperCase() ) {
+          case 'AT': case 'BE': case 'CH': case 'CZ': case 'DE': case 'DK': case 'ES': case 'FR': case 'GB': case 'HU': case 'IE': case 'IT': case 'NL': case 'PL': case 'PT': case 'RO': case 'RU': case 'SE': case 'UK': var region='Europe'; break;
+          case 'AU': case 'CN': case 'HANT': case 'ID': case 'IN': case 'JP': case 'KR': case 'MY': case 'NZ': case 'PH': case 'SG': case 'TH': case 'TW': case 'VN': var region='AsiaPacific'; break;
+          case 'AR': case 'BR': case 'BZ': case 'CL': case 'CO': case 'CR': case 'DO': case 'EC': case 'GT': case 'HN': case 'MX': case 'NI': case 'PA': case 'PE': case 'PR': case 'SV': case 'VE': var region='LatinSouthAmerica'; break;
+          case 'AE': case 'AO': case 'BH': case 'BW': case 'EG': case 'GH': case 'IL': case 'IQ': case 'JO': case 'KW': case 'KE': case 'LB': case 'LS': case 'MG': case 'MU': case 'MW': case 'MZ': case 'NA': case 'NG': case 'OM': case 'SA': case 'SZ': case 'TR': case 'TZ': case 'UG': case 'YE': case 'ZA': case 'ZM': case 'ZW': var region='AfricaMiddleEast'; break;
+          default: var region='NorthAmerica';
+        }
+        //customize hero image to match vistor's location
+        $('div.parallax').attr('style','background-image:url(\'/resources/images/rockwellautomation/carousel/hero/hero-worldwide'+ region +'.jpg\');');
+      });
+
+      function gotoPrefPage(lang) {
+        Set_Cookie('myRokLang', lang, '365', 'https://origin-ab.rockwellautomation.com/', '.rockwellautomation.com'); // store language cookie
+        var prevPage= Get_Cookie('myRokPrevUrl');
+        var prefLang= ( lang=='en' || lang=='NoPref' ) ? '' : lang;
+        prevPage= ( prevPage==null || prevPage=='' ) ? 'https://'+ location.hostname +'/'+ prefLang : prevPage;
+        var urlSite= prevPage.replace(/^(.+\/\/ab([^\.]+)?\.rockwellautomation\.com)(\/(allenbradley)?_?(de|es|fr|it|ja|ko|pt|zh)?)?(\/?.+)?$/,'$3');
+        var prefSite= '/'+( /allenbradley(_..)?/.test(urlSite) ? 'allenbradley'+(prefLang==''?'':'_'+prefLang) : (prefLang==''?'': prefLang) );
+        var prefPage= prevPage.replace(/^(.+\/\/ab([^\.]+)?\.rockwellautomation\.com)(\/(allenbradley)?_?(de|es|fr|it|ja|ko|pt|zh)?)?(\/?.+)?$/,'$1'+prefSite+'/'+'$6');
+        window.location.href= prefPage.replace(/([^:])\/\/\/?/g,'https://origin-ab.rockwellautomation.com/$1/'); //go to page in preferred language
+      }
+      </script>
+
+    </head>
+    <body class="ab" id="top">
+      	<!-- Google Tag Manager -->
+			<noscript>
+				<iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MDSP"height="0" width="0" style="display:none;visibility:hidden"></iframe>
+			</noscript>
+			<script>
+			(function(w,d,s,l,i){
+				w[l]=w[l]||[];
+				w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+				var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+				j.async=true;
+				j.src='../www.googletagmanager.com/gtm5445.html?id='+i+dl;
+				f.parentNode.insertBefore(j,f);
+			})
+			(window,document,'script','dataLayer','GTM-MDSP');
+			</script>
+		<!-- End Google Tag Manager -->
+        <div class="scrollTop-Container">
+          <a href="#top" class="scrollTop" style="display:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path d="M7.514 19.554l8.88-5.474 8.063 5.455a.8.8 0 1 0 .897-1.325l-8.491-5.745a.799.799 0 0 0-.868-.018l-9.32 5.745a.8.8 0 0 0 .839 1.362z"/>
+            </svg>
+            <br />Top
+          </a>
+        </div>
+        <!--[if lt IE 9]>
+        <div class="upgrade">
+          <p class="outdated-browser">You are currently in Compatibility Mode or using an outdated browser. To turn off Compatibility Mode go to Tools &gt; Compatibility View Settings.<br />If this does not resolve the issues please upgrade your browser to <a href="http://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">FireFox</a> to improve your experience.</p>
+        </div>
+        <![endif]-->
+    <div class="logobar">
+      <a class="navbar-brand" href="http://ab.rockwellautomation.com/" title="Allen-Bradley">
+        <svg id="Content" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 381.912 84.814"><path fill="#ffffff" d="M108.201 13.513h9.49l1.972 37.963h-7.987l-.051-8.03h-10.104l-3.453 8.03H90.11l18.091-37.963zm-4.008 23.64h7.44l-.044-17.018h-.11l-7.286 17.017zM130.402 13.513h7.3l-8.03 37.963h-7.3l8.03-37.963zM143.134 13.513h7.3l-8.03 37.963h-7.3l8.03-37.963zM156.64 38.262l-.482 2.314c-.73 3.344-.51 6.63 2.19 6.63 2.439 0 3.848-1.848 5.016-5.36h6.57c-1.679 6.637-5.65 10.36-12.556 10.36-10.63 0-9.323-8.177-7.805-15.331 1.628-7.644 4.629-14.747 14.506-14.747 8.55 0 9.243 5.724 7.374 14.484l-.343 1.643-14.47.007zm8.41-4.38c.767-4.38.73-6.804-2.27-6.804s-4.417 3.03-4.98 5.687l-.233 1.117h7.483zM178.228 22.872h7.015l-.73 3.351h.103a9.936 9.936 0 0 1 8.162-4.088c4.562 0 6.745 2.482 5.54 8.118l-4.496 21.172h-7.3l4.19-19.712c.606-2.818-.124-3.964-2.315-3.964-2.496 0-4.205 1.54-4.884 4.73l-4.022 18.982h-7.3l6.037-28.588zM217.512 32.947l-1.329 6.271H201.21l1.321-6.27h14.98zM226.63 13.513h12.805c6.264 0 10.28 2.344 8.76 9.615-.868 4.088-3.489 7.235-7.49 8.279v.124c4.067.577 6.104 3.76 5.023 8.804-1.255 5.958-5.27 11.112-14.2 11.112h-12.95l8.052-37.934zm4.344 15.565h2.19c4.19 0 6.417-1.46 7.17-4.986s-.73-4.943-4.476-4.943h-2.76l-2.124 9.929zm-3.555 16.733h2.978c3.65 0 6.44-1.322 7.374-5.738.934-4.417-1.285-5.687-4.636-5.687h-3.292l-2.424 11.425zM253.956 22.872h7.016l-.818 3.833h.11c2.073-2.76 4.526-4.555 7.556-4.555.44.001.879.035 1.314.102l-1.504 7.001a28.957 28.957 0 0 0-2.249-.102 6.38 6.38 0 0 0-6.519 5.154l-3.65 17.156h-7.3l6.044-28.588zM269.718 31.633l.146-.73c1.402-6.57 6.395-8.804 11.914-8.804 8.717 0 9.586 3.592 8.49 8.76l-3.19 15.025c-.561 2.657-.664 3.884-.27 5.534h-7a10.353 10.353 0 0 1-.278-2.979h-.11c-2.336 2.979-4.562 3.723-8.067 3.723-5.11 0-5.979-4.38-5.169-8.176 1.147-5.38 3.782-7.542 9.119-8.936l4.35-1.044c2.315-.599 3.228-1.46 3.651-3.351.46-2.19-.212-3.504-2.657-3.504-2.227 0-3.716 1.46-4.19 3.723l-.176.796-6.563-.037zm12.214 5.52a11.23 11.23 0 0 1-3.439 1.46c-3.11.635-4.584 2.08-5.11 4.628-.46 2.19-.044 3.979 1.92 3.979a5.607 5.607 0 0 0 5.453-4.38l1.176-5.688zM306.403 48.41h-.095c-2.19 2.672-4.417 3.782-7.3 3.782-6.009 0-7.841-4.38-5.578-15.04 2.263-10.658 5.965-15.017 11.966-15.017 2.76 0 4.38 1.11 5.431 3.38h.11l2.555-12.002h7.3l-8.03 37.963h-7.016l.657-3.066zm-3.789-1.847c3.234 0 4.556-3.198 5.84-9.41 1.285-6.213 1.366-9.404-1.883-9.404s-4.497 3.19-5.84 9.403-1.3 9.41 1.883 9.41zM325.983 13.513h7.3l-8.03 37.963h-7.33l8.06-37.963zM339.474 38.262l-.467 2.314c-.73 3.344-.526 6.63 2.19 6.63 2.439 0 3.84-1.848 5.008-5.36h6.57c-1.67 6.637-5.657 10.36-12.556 10.36-10.622 0-9.308-8.177-7.79-15.331 1.628-7.644 4.622-14.747 14.492-14.747 8.563 0 9.257 5.724 7.395 14.484l-.357 1.643-14.485.007zm8.418-4.38c.774-4.38.73-6.804-2.278-6.804-2.92 0-4.38 3.03-4.971 5.687l-.234 1.117h7.483zM354.178 55.316c.62.107 1.247.158 1.876.153 2.701 0 4.03-1.46 4.782-4.022l-1.942-28.575h7.636l.059 19.748h.11l7.913-19.711h7.3l-12.571 26.654c-4.643 9.885-6.57 11.265-13.382 11.265h-2.935l1.154-5.512z"/><path fill="#ffffff" d="M27.092 52.264h.957l-.475-2.635zM17.09 49.381h1.234v4.147H17.09z"/><path fill="#ffffff" d="M54.856 45.154H5.278a1.095 1.095 0 0 0-.773 1.869l9.987 9.987c2 2 4.712 3.125 7.541 3.124h16.061c2.83 0 5.542-1.123 7.542-3.124l9.987-9.987a1.095 1.095 0 0 0-.767-1.87zm-35.51 8.44a.73.73 0 0 1-.605.73c.078.249.275.443.525.518v.299h-.657c-.4-.155-.74-.437-.964-.803h-.854a.73.73 0 0 1-.73-.73v-4.271a.73.73 0 0 1 .73-.73h1.833a.73.73 0 0 1 .73.73l-.008 4.256zm4.98 0a.73.73 0 0 1-.73.73H21.77a.73.73 0 0 1-.73-.73v-4.987h1.015v4.92h1.234v-4.92h1.022l.014 4.986zm4.212.73l-.292-1.264h-1.343l-.292 1.263h-1.015l1.292-5.716h1.372l1.322 5.709-1.044.007zm4.906 0h-2.54v-5.717h1.021v4.76h1.519v.956zm2.248 0H34.67v-5.717h1.022v5.716zm3.818-4.921h-.817v4.92H37.67v-4.92h-.818v-.796h2.657v.796zm3.439 2.277v2.643h-.95V51.68l-1.576-3.073h1.139l.912 1.986.913-1.986h1.139l-1.577 3.073zM44.833 26.822h-4.965V24.37h3.767a1.68 1.68 0 0 0 1.526-1.46v-5.023a1.774 1.774 0 0 0-1.854-1.591h-5.76v19.171h7.351a2.322 2.322 0 0 0 1.87-1.89v-4.834a2.307 2.307 0 0 0-1.935-1.92z"/><path fill="#ffffff" d="M57.367 14.835L45.307 2.767A9.49 9.49 0 0 0 38.62 0H21.53a9.49 9.49 0 0 0-6.688 2.767L2.774 14.835A9.49 9.49 0 0 0 0 21.529V39.24c0 2.097 1.7 3.797 3.796 3.797H56.331c2.1 0 3.803-1.703 3.803-3.804V21.53a9.49 9.49 0 0 0-2.767-6.694zM22.917 37.94s.24-.518-.358-2.073l-1.826-4.746h-6.22v-2.446h5.36l-4.06-10.636-6.57 18.047a3.278 3.278 0 0 0-.066 1.854H5.329c.183 0 .73-.343 1.46-2.446l7.673-21.77h5.11l8.893 22.894s.452 1.168.942 1.322h-6.49zm7.57-11.053H26.91v-2.453h3.577v2.453zm21.39 6.826a4.234 4.234 0 0 1-4.234 4.234H31.918c.73-.73.599-2.446.599-2.446v-18.63c0-2.49-.796-3.147-.796-3.147h15.046a3.986 3.986 0 0 1 3.782 3.979v4.431a3.146 3.146 0 0 1-3.14 3.154h-.007.336a4.125 4.125 0 0 1 4.14 4.11V33.714z"/><path fill="#ffffff" d="M183.134 77.51a7.054 7.054 0 0 1-.227 2.036 2.92 2.92 0 0 1-2.92 2.19 2.591 2.591 0 0 1-1.175-.255 2.279 2.279 0 0 1-.884-.73h-.05c-.052 0 0 0 0 .037v.693a.146.146 0 0 1-.161.16h-.825a.139.139 0 0 1-.154-.16V70.51c0-.11.052-.161.154-.161h.825a.146.146 0 0 1 .16.16v3.79a.044.044 0 0 0 0 .043h.059c.228-.314.532-.565.883-.73a2.598 2.598 0 0 1 1.176-.263 3.06 3.06 0 0 1 1.912.592c.522.406.894.973 1.059 1.613.133.643.189 1.3.168 1.957zm-1.205 1.182c.05-.392.072-.787.066-1.182a6.752 6.752 0 0 0-.088-1.234 2.784 2.784 0 0 0-.285-.796 1.833 1.833 0 0 0-1.78-1.168 1.702 1.702 0 0 0-1.052.329c-.299.217-.52.524-.635.876a2.919 2.919 0 0 0-.234.773 7.454 7.454 0 0 0-.073 1.22c-.008.4.016.8.073 1.197a3.2 3.2 0 0 0 .22.73c.122.357.345.672.642.905.31.23.688.348 1.073.336.414.009.821-.108 1.168-.336.322-.223.56-.546.679-.92.11-.23.186-.477.226-.73zM184.842 84.628v-.643a.139.139 0 0 1 .16-.16h.059c.335.003.667-.059.978-.183a1.46 1.46 0 0 0 .592-.628c.22-.448.401-.914.54-1.394v-.095l-2.716-7.906v-.066c0-.073.044-.11.139-.11h.854a.197.197 0 0 1 .197.132l2.088 6.49c.013.01.03.01.044 0a.058.058 0 0 0 .05 0l2.03-6.49a.183.183 0 0 1 .19-.132h.84c.117 0 .16.059.124.176l-2.971 8.665a7.843 7.843 0 0 1-.73 1.592c-.2.325-.496.58-.847.73-.458.156-.94.226-1.424.204h-.11c-.05-.022-.087-.073-.087-.182zM201.582 81.46l-2.007-4.454a.102.102 0 0 0-.095-.066h-1.497a.073.073 0 0 0-.08.08v4.38a.183.183 0 0 1-.051.14.212.212 0 0 1-.14.058h-1.883a.183.183 0 0 1-.131-.058.16.16 0 0 1-.058-.14V70.509a.182.182 0 0 1 .058-.138.175.175 0 0 1 .131-.051h4.6a3.81 3.81 0 0 1 1.81.416c.51.269.93.683 1.205 1.19a3.65 3.65 0 0 1 .423 1.781 3.183 3.183 0 0 1-.547 1.876 2.92 2.92 0 0 1-1.526 1.095.095.095 0 0 0-.051.117l2.19 4.548a.22.22 0 0 1 0 .095c0 .088-.058.132-.175.132h-1.979a.24.24 0 0 1-.197-.11zm-3.65-9.083v2.745c0 .059 0 .088.08.088h2.066c.406.013.8-.13 1.103-.402.282-.275.435-.657.423-1.05a1.46 1.46 0 0 0-.423-1.052 1.547 1.547 0 0 0-1.103-.409h-2.11a.073.073 0 0 0-.08.051l.044.03zM207.298 81.24a3.73 3.73 0 0 1-1.46-1.46 4.205 4.205 0 0 1-.525-2.124v-3.424a4.168 4.168 0 0 1 .525-2.11 3.782 3.782 0 0 1 1.46-1.46 4.665 4.665 0 0 1 2.19-.504 4.724 4.724 0 0 1 2.227.504 3.71 3.71 0 0 1 1.46 1.46c.365.642.549 1.371.533 2.11v3.438a4.213 4.213 0 0 1-.533 2.14 3.65 3.65 0 0 1-1.46 1.46c-.69.347-1.454.52-2.226.503a4.664 4.664 0 0 1-2.19-.533zm3.65-2c.365-.397.559-.922.54-1.46v-3.541a2.088 2.088 0 0 0-.532-1.46c-.38-.393-.914-.6-1.46-.57a1.862 1.862 0 0 0-1.387.49 2.088 2.088 0 0 0-.54 1.46v3.54a2.059 2.059 0 0 0 .54 1.46c.37.386.89.593 1.423.57a1.906 1.906 0 0 0 1.41-.46l.007-.03zM217.234 81.211a3.534 3.534 0 0 1-1.46-1.373 3.993 3.993 0 0 1-.51-2.044v-3.708c-.016-.715.16-1.421.51-2.045a3.52 3.52 0 0 1 1.46-1.365 5.33 5.33 0 0 1 4.38 0c.601.285 1.108.736 1.46 1.3a3.65 3.65 0 0 1 .52 1.956c0 .095-.067.153-.19.175l-1.884.11c-.11 0-.16-.059-.16-.175a1.818 1.818 0 0 0-.526-1.366 1.855 1.855 0 0 0-1.373-.51 1.876 1.876 0 0 0-1.387.51c-.359.362-.55.857-.526 1.366v3.876c-.022.502.17.99.526 1.344.372.354.873.542 1.387.518a1.862 1.862 0 0 0 1.373-.518c.356-.354.547-.842.525-1.344 0-.124.066-.175.19-.175l1.884.073c.048.002.094.02.13.051a.131.131 0 0 1 .06.11c.012.69-.168 1.37-.519 1.963a3.534 3.534 0 0 1-1.46 1.322 4.869 4.869 0 0 1-2.19.46 4.734 4.734 0 0 1-2.22-.511zM225.316 81.518a.16.16 0 0 1-.058-.139v-10.87a.182.182 0 0 1 .058-.14.175.175 0 0 1 .132-.05h1.883a.175.175 0 0 1 .19.19v4.497c0 .036 0 .058.036.058h.066l3.709-4.614c.06-.07.148-.11.24-.11h2.125c.08 0 .139 0 .16.074a.197.197 0 0 1 0 .168l-3.584 4.577a.102.102 0 0 0 0 .117l3.796 6.088a.589.589 0 0 1 0 .11c0 .08-.05.117-.16.117h-2.117a.226.226 0 0 1-.227-.132l-2.861-4.628a.058.058 0 0 0-.051 0 .088.088 0 0 0-.066 0l-1.008 1.27a.264.264 0 0 0-.036.095v3.197a.182.182 0 0 1-.051.14.212.212 0 0 1-.139.058h-1.883a.183.183 0 0 1-.154-.073zM237.581 81.415l-2.84-10.907v-.058c0-.102.066-.146.183-.146h1.993a.197.197 0 0 1 .204.16l1.526 6.571c0 .044 0 .066.051.066s.036 0 .051-.066l1.46-6.527a.212.212 0 0 1 .212-.175h1.942a.212.212 0 0 1 .226.16l1.606 6.571s0 .051.051.051.037 0 .044-.05l1.46-6.527a.204.204 0 0 1 .212-.176h1.89c.154 0 .213.066.183.205l-2.642 10.885a.212.212 0 0 1-.22.16h-1.912a.204.204 0 0 1-.212-.16l-1.642-6.957c0-.044-.015-.066-.044-.066-.044 0-.037 0-.051.066l-1.526 6.942a.19.19 0 0 1-.203.176h-1.79a.219.219 0 0 1-.212-.198zM257.066 72.21a.16.16 0 0 1-.131.058h-5.271a.073.073 0 0 0-.08.08v2.49c0 .058 0 .08.08.08h3.453c.052 0 .102.021.139.058a.183.183 0 0 1 .05.14v1.554a.182.182 0 0 1-.05.139.197.197 0 0 1-.14.058h-3.452c-.059 0-.08 0-.08.08v2.6c0 .058 0 .08.08.08h5.27c.05 0 .098.022.132.058.04.035.06.086.059.139v1.555a.16.16 0 0 1-.059.139.183.183 0 0 1-.131.058h-7.425a.197.197 0 0 1-.197-.197v-10.87a.212.212 0 0 1 .058-.14.183.183 0 0 1 .139-.05h7.425a.175.175 0 0 1 .131.05c.039.036.06.087.058.14v1.562a.16.16 0 0 1-.058.139zM258.76 81.518a.19.19 0 0 1-.059-.139v-10.87a.212.212 0 0 1 .059-.14.175.175 0 0 1 .131-.05h1.884a.175.175 0 0 1 .19.19v9.03a.073.073 0 0 0 .08.08h5.256c.11 0 .197.089.197.198v1.555a.19.19 0 0 1-.058.138.198.198 0 0 1-.139.059h-7.41a.182.182 0 0 1-.131-.051zM267.973 81.518a.19.19 0 0 1-.058-.139v-10.87a.212.212 0 0 1 .058-.14.183.183 0 0 1 .139-.05h1.876a.183.183 0 0 1 .139.05.212.212 0 0 1 .058.14v9.03c0 .059 0 .08.08.08h5.25a.19.19 0 0 1 .138.059.198.198 0 0 1 .059.139v1.555a.197.197 0 0 1-.197.197h-7.425a.19.19 0 0 1-.117-.051zM287.247 81.415l-.482-1.576c0-.044-.051-.066-.08-.066h-3.958s-.058 0-.08.066l-.467 1.577a.204.204 0 0 1-.204.16h-2.045a.19.19 0 0 1-.146-.058.182.182 0 0 1 0-.168l3.461-10.842a.197.197 0 0 1 .204-.16h2.526c.1-.003.188.064.212.16l3.468 10.864a.146.146 0 0 1 0 .08c0 .095-.059.146-.175.146h-2.045a.204.204 0 0 1-.19-.183zm-3.943-3.394h2.833c.065 0 .08 0 .065-.095l-1.46-4.775c0-.043 0-.058-.043-.058s0 0-.052.058l-1.409 4.775c-.021.066 0 .095.066.095zM292.795 81.218a3.504 3.504 0 0 1-1.46-1.358 3.839 3.839 0 0 1-.526-2.015V70.51a.212.212 0 0 1 .059-.14.175.175 0 0 1 .131-.05h1.883a.19.19 0 0 1 .14.05.204.204 0 0 1 .05.14v7.344a1.898 1.898 0 1 0 3.796 0v-7.344a.212.212 0 0 1 .059-.14.175.175 0 0 1 .131-.05h1.884a.175.175 0 0 1 .19.19v7.3a3.906 3.906 0 0 1-.519 2.015 3.562 3.562 0 0 1-1.46 1.358 5.154 5.154 0 0 1-4.38 0l.022.036zM308.856 70.377a.204.204 0 0 1 .051.139v1.577a.175.175 0 0 1-.19.19h-2.876a.073.073 0 0 0-.08.08v9.016a.197.197 0 0 1-.198.197h-1.876a.198.198 0 0 1-.138-.058.182.182 0 0 1-.051-.139v-9.016a.073.073 0 0 0-.08-.08h-2.797a.183.183 0 0 1-.139-.052.198.198 0 0 1-.058-.138v-1.585a.212.212 0 0 1 .058-.138.183.183 0 0 1 .14-.051h8.095a.19.19 0 0 1 .139.058zM311.71 81.24a3.65 3.65 0 0 1-1.46-1.46 4.14 4.14 0 0 1-.533-2.124v-3.424a4.102 4.102 0 0 1 .533-2.11 3.71 3.71 0 0 1 1.46-1.46 5.11 5.11 0 0 1 4.44 0 3.71 3.71 0 0 1 1.46 1.46c.364.642.548 1.371.532 2.11v3.438a4.212 4.212 0 0 1-.533 2.14 3.65 3.65 0 0 1-1.46 1.46 5.11 5.11 0 0 1-4.438 0v-.03zm3.65-2c.37-.395.567-.92.548-1.46v-3.541a2.088 2.088 0 0 0-.54-1.46c-.38-.393-.914-.6-1.46-.57a1.862 1.862 0 0 0-1.402.49c-.359.4-.55.923-.533 1.46v3.54c-.02.538.172 1.062.533 1.46.371.386.89.593 1.424.57a1.891 1.891 0 0 0 1.423-.46l.008-.03zM327.356 70.326h1.883a.175.175 0 0 1 .131.051.212.212 0 0 1 .059.139v10.863a.19.19 0 0 1-.059.139.183.183 0 0 1-.131.058h-1.883a.183.183 0 0 1-.132-.058.16.16 0 0 1-.058-.139v-7.082c0-.043 0-.065-.037-.065s0 0-.065.044l-1.701 2.672a.248.248 0 0 1-.227.124h-.949a.248.248 0 0 1-.219-.124l-1.708-2.672s-.044-.044-.059 0 0 0 0 .073v7.066a.182.182 0 0 1-.05.14.212.212 0 0 1-.14.058h-1.883a.212.212 0 0 1-.139-.059.182.182 0 0 1-.05-.139V70.508a.175.175 0 0 1 .19-.19h1.868a.27.27 0 0 1 .226.125l2.41 3.745c0 .066.065.066.094 0l2.424-3.745a.27.27 0 0 1 .204-.117zM338.336 81.415l-.482-1.576c0-.044-.051-.066-.08-.066h-3.958s-.058 0-.08.066l-.467 1.577a.204.204 0 0 1-.204.16h-2.045a.19.19 0 0 1-.146-.058.182.182 0 0 1 0-.168l3.46-10.842a.19.19 0 0 1 .205-.16h2.526a.197.197 0 0 1 .205.16l3.475 10.864a.264.264 0 0 1 0 .08c0 .095-.059.146-.176.146h-2.044a.205.205 0 0 1-.19-.183zm-3.928-3.394h2.832c.059 0 .08 0 .059-.095l-1.46-4.775c0-.043 0-.058-.044-.058s-.037 0-.051.058l-1.417 4.775c-.021.066 0 .095.08.095zM348.688 70.377c.038.036.06.086.058.139v1.577a.175.175 0 0 1-.058.138.175.175 0 0 1-.132.051h-2.876a.073.073 0 0 0-.08.08v9.017a.197.197 0 0 1-.198.197h-1.876a.197.197 0 0 1-.197-.197v-9.016a.073.073 0 0 0-.08-.08h-2.796a.175.175 0 0 1-.132-.052.175.175 0 0 1-.058-.138v-1.585a.182.182 0 0 1 .058-.138.175.175 0 0 1 .132-.051h8.103c.05 0 .098.02.132.058zM350.25 81.518a.19.19 0 0 1-.058-.139v-10.87a.212.212 0 0 1 .058-.14.182.182 0 0 1 .139-.05h1.876a.182.182 0 0 1 .139.05.212.212 0 0 1 .058.14v10.863a.197.197 0 0 1-.197.197h-1.876a.19.19 0 0 1-.139-.051zM356.214 81.24a3.687 3.687 0 0 1-1.46-1.46 4.212 4.212 0 0 1-.533-2.124v-3.424a4.175 4.175 0 0 1 .533-2.11 3.73 3.73 0 0 1 1.46-1.46 4.657 4.657 0 0 1 2.19-.504 4.702 4.702 0 0 1 2.227.504 3.65 3.65 0 0 1 1.46 1.46c.361.644.545 1.372.533 2.11v3.438a4.286 4.286 0 0 1-.533 2.14 3.65 3.65 0 0 1-1.46 1.46 5.11 5.11 0 0 1-4.431 0l.014-.03zm3.65-2c.37-.395.567-.92.548-1.46v-3.541a2.059 2.059 0 0 0-.54-1.46c-.8-.76-2.054-.76-2.854 0a2.059 2.059 0 0 0-.54 1.46v3.54a2.03 2.03 0 0 0 .54 1.46c.369.384.884.592 1.416.57a1.89 1.89 0 0 0 1.416-.54l.015-.03zM370.91 70.377a.183.183 0 0 1 .14-.051h1.875a.19.19 0 0 1 .14.051.205.205 0 0 1 .05.139v10.863a.183.183 0 0 1-.05.139.197.197 0 0 1-.14.058h-1.817a.219.219 0 0 1-.22-.131l-4.168-6.877s-.044-.044-.058-.044-.037 0-.037.073l.037 6.782a.197.197 0 0 1-.198.197h-1.876a.197.197 0 0 1-.197-.197v-10.87a.212.212 0 0 1 .058-.14.182.182 0 0 1 .14-.05h1.81a.234.234 0 0 1 .226.124l4.147 6.848s.043.05.065.043c.022-.007 0 0 0-.073V70.51a.211.211 0 0 1 .074-.132z"/></svg>
+      </a>
+    </div>
+
+    <div class="content home worldwide" style="padding-top:0px;">
+      <div id="GSC-hero">
+        <div class="parallax" style="background-image:url('https://origin-ab.rockwellautomation.com/resources/images/rockwellautomation/carousel/hero/hero-worldwideNorthAmerica.jpg');">
+          <div class="hero">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 feature-container">
+                  <div class="feature-content">
+                    <h1>Welcome</h1>
+                    <h2>Find Products In Your Language</h2>
+                    <div class="primary-cta">
+                      <a class="hero-primary-cta" href="https://origin-ab.rockwellautomation.com/" onclick="gotoPrefPage('en'); return false;">
+                        <button class="btn btn-default">
+                          English
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /container -->
+          </div> <!-- /hero -->
+        </div> <!-- /parallax -->
+      </div>
+
+      <div class="content-area">
+     
+        <div class="content-row content-3col">
+          <div class="container">
+            <div class="row content-blocks">
+              <h3>Select Your Language</h3>
+              <div class="country-sites">
+                <ul>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/zh/" onclick="gotoPrefPage('zh'); return false;" title="Chinese (中文)">中文</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/de/" onclick="gotoPrefPage('de'); return false;" title="German (Deutsch)">Deutsch</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/" onclick="gotoPrefPage('en'); return false;" title="English">English</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/es/" onclick="gotoPrefPage('es'); return false;" title="Spanish (Español)">Español</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/fr/" onclick="gotoPrefPage('fr'); return false;" title="French (Français)">Français</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/it/" onclick="gotoPrefPage('it'); return false;" title="Italian (Italiano)">Italiano</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/ja/" onclick="gotoPrefPage('ja'); return false;" title="Japanese (日本語)">日本語</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/ko/" onclick="gotoPrefPage('ko'); return false;" title="Korean (한국어)">한국어</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="country-container">
+                      <div class="country-lang">
+                        <a class="pref-link" href="https://origin-ab.rockwellautomation.com/pt/" onclick="gotoPrefPage('pt'); return false;" title="Portuguese (Português)">Português</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-row content-cta">
+          <div class="container">
+            <div class="row content-blocks">
+              <div class="alt-cta">
+                <a href="javascript:void(0);" onclick="gotoPrefPage('NoPref');"><button class="btn btn-default">No Preference</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /content -->
+    </div>
+
+    <div id="RA_footer-area">
+      <footer>
+        <div class="container">
+          <div class="copyright">Copyright &copy;<script language="JavaScript">var d=new Date();yr=d.getFullYear(); document.write(yr);</script> Rockwell Automation, Inc. All Rights Reserved.<br />
+          <a title="Legal Terms and Conditions" target="" href="https://origin-ab.rockwellautomation.com/global/legal-notices/overview.page">Legal Notices</a>&nbsp;<span class="hidden-print">|</span>&nbsp;<a title="Privacy and Cookies Policy" target="" href="https://origin-ab.rockwellautomation.com/global/detail.page?pagetitle=Privacy-and-Cookies-Policy&amp;content_type=legal&amp;docid=2a08b7b7fdd23bc2f17895f25bd46657">Privacy &amp; Cookies Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+      <script src="resources/scripts/rockwellautomation/vendor/bootstrap.min.js"></script>
+      <script src="https://origin-ab.rockwellautomation.com/resources/scripts/rockwellautomation/main.js"></script>
+
+    </body>
+
+<!-- Mirrored from origin-ab.rockwellautomation.com/lang-selection.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Aug 2020 00:23:58 GMT -->
+</html>

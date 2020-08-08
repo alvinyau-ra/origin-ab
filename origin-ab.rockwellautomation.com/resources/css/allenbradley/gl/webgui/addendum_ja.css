@@ -1,0 +1,9 @@
+/* CSS Document - Japanese */
+.brandbar .icons > .icon-wrapper .icon-slideout .icon-slideout-inner .search-form .search-text, #nav-mobile .navbar-menu .search-box .search-form .search-text {width: 218px !important;}
+
+.ab .navbar-inverse .navbar-nav .cbp-hrmenu > ul > li {
+    margin: 31px 0 0 5px !important;
+}
+.ab .navbar .navbar-nav .cbp-hrmenu > ul > li > a {
+    padding: 10px 8px 11px !important;
+}

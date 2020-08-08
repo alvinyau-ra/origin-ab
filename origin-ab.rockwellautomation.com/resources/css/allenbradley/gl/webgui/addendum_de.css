@@ -1,0 +1,23 @@
+/* CSS Document - German */
+#leftnav, #rightnav {word-wrap:break-word; overflow-wrap:break-word; -webkit-hyphens:auto; -moz-hyphens:auto; hyphens:auto; word-break:break-word;} /*translations addition for wrapping*/
+.brandbar .icons > .icon-wrapper .icon-slideout .icon-slideout-inner .search-form .search-text, #nav-mobile .navbar-menu .search-box .search-form .search-text {width: 195px !important;}
+
+/* Blair temporarily added for launch */
+ul#nav {padding:0 0 0 6px;}
+ul#nav a, ul#nav a.unhover {padding:0 10px 0 11px;}
+ul#nav a:hover, #nav a.gmhover {background-image:none;}
+
+#C6-S5 #featurecontent h2 {font-size: 50px; line-height: 52px;}
+#C6-S5 #featurecontent h3 {font-size: 20px;}
+#C6-S5 #featurecontent h4 {font-size: 16px; line-height: 18px;}
+.updates {padding-top:25px;}
+.cbp-hrmenu .cbp-hrsub-inner .row li.spacer {height:75px !important;}
+.product-directory ul {font-size:15px;}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+	
+	.task-bar {
+		font-size:11px !important;
+	}
+	
+}

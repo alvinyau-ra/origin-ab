@@ -1,0 +1,15 @@
+/* CSS Document - Portuguese */
+.brandbar .icons > .icon-wrapper .icon-slideout .icon-slideout-inner .search-form .search-text, #nav-mobile .navbar-menu .search-box .search-form .search-text {width: 178px !important;}
+
+.ab .navbar .navbar-nav .cbp-hrmenu > ul > li > a {padding:10px 5px 11px !important;}
+.cbp-hrmenu .cbp-hrsub-inner .row li.spacer {height:75px !important;}
+.product-directory ul {font-size:15px;}
+.breadcrumb .share-list > li > .dropdown-menu > li > a {width:104px; padding:3px; text-align:left;}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+	
+	.task-bar {
+		font-size:11px !important;
+	}
+	
+}

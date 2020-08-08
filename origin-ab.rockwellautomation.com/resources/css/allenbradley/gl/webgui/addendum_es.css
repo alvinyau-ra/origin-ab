@@ -1,0 +1,19 @@
+/* CSS Document - Spanish */
+.brandbar .icons > .icon-wrapper .icon-slideout .icon-slideout-inner .search-form .search-text, #nav-mobile .navbar-menu .search-box .search-form .search-text {width: 396px !important;}
+
+.ab .navbar-inverse .navbar-nav .cbp-hrmenu > ul > li {
+    margin: 31px 0 0 5px !important;
+}
+.ab .navbar .navbar-nav .cbp-hrmenu > ul > li > a {
+    padding: 10px 5px 11px !important;
+}
+
+/* Blair temporarily added for launch */
+ul#nav {padding:0 0 0 6px !important;}
+ul#nav a, ul#nav a.unhover {padding:0 12px 0 12px !important; font-size:12px !important;}
+ul#nav a:hover, #nav a.gmhover {background-image:none !important;}
+.cbp-hrmenu .cbp-hrsub-inner .row li.spacer {height:95px !important;}
+.product-directory ul {font-size:15px !important;}
+.task-bar a {font-size:12px !important;}
+.updates {padding-top:25px !important;}
+.breadcrumb .share-list > li > .dropdown-menu > li > a {width:87px !important; padding:3px !important; text-align:left !important;}

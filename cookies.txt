@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+origin-ab.rockwellautomation.com	TRUE	/	FALSE	1999999999	BIGipServerraweb-HTTPS_vs.app~raweb-HTTPS_vs_pool	1124288010.47873.0000
+origin-ab.rockwellautomation.com	TRUE	/	FALSE	1999999999	JSESSIONID	73033C38AC1B8B7C57142B970B7DEBFB
+
